@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D58A994E18482F7359C261BE /* Pods_VkPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B739718829C76A0C6A705E /* Pods_VkPhotoViewer.framework */; };
+		FEC5C47E1DCCBCDC00507485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */; };
+		FEC5C4831DCCBCDC00507485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5C4811DCCBCDC00507485 /* Main.storyboard */; };
+		FEC5C4851DCCBCDC00507485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC5C4841DCCBCDC00507485 /* Assets.xcassets */; };
+		FEC5C4881DCCBCDC00507485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5C4861DCCBCDC00507485 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75B739718829C76A0C6A705E /* Pods_VkPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE9ACA52F49E5095AC2DD3 /* Pods-VkPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkPhotoViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
+		EC1FA1C50F0AB5E3E9B83396 /* Pods-VkPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		FEC5C47A1DCCBCDC00507485 /* VkPhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkPhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEC5C4821DCCBCDC00507485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEC5C4841DCCBCDC00507485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEC5C4871DCCBCDC00507485 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FEC5C4891DCCBCDC00507485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEC5C4771DCCBCDC00507485 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D58A994E18482F7359C261BE /* Pods_VkPhotoViewer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5911F7D30F112F4671B2B3CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75B739718829C76A0C6A705E /* Pods_VkPhotoViewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F802F41D858C471FD4672B6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC1FA1C50F0AB5E3E9B83396 /* Pods-VkPhotoViewer.debug.xcconfig */,
+				A2CE9ACA52F49E5095AC2DD3 /* Pods-VkPhotoViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE7A00FF1DCCFC7200F35313 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FE7A01001DCCFC8700F35313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FE7A01011DCCFC9800F35313 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		FE7A01021DCCFCAC00F35313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FEC5C4711DCCBCDB00507485 = {
+			isa = PBXGroup;
+			children = (
+				FEC5C47C1DCCBCDC00507485 /* VkPhotoViewer */,
+				FEC5C47B1DCCBCDC00507485 /* Products */,
+				F802F41D858C471FD4672B6C /* Pods */,
+				5911F7D30F112F4671B2B3CD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FEC5C47B1DCCBCDC00507485 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEC5C47A1DCCBCDC00507485 /* VkPhotoViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEC5C47C1DCCBCDC00507485 /* VkPhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				FE7A01021DCCFCAC00F35313 /* Views */,
+				FE7A01011DCCFC9800F35313 /* API */,
+				FE7A01001DCCFC8700F35313 /* Models */,
+				FE7A00FF1DCCFC7200F35313 /* Controllers */,
+				FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */,
+				FEC5C4811DCCBCDC00507485 /* Main.storyboard */,
+				FEC5C4841DCCBCDC00507485 /* Assets.xcassets */,
+				FEC5C4861DCCBCDC00507485 /* LaunchScreen.storyboard */,
+				FEC5C4891DCCBCDC00507485 /* Info.plist */,
+			);
+			path = VkPhotoViewer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEC5C4791DCCBCDC00507485 /* VkPhotoViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEC5C48C1DCCBCDC00507485 /* Build configuration list for PBXNativeTarget "VkPhotoViewer" */;
+			buildPhases = (
+				B134E82AD7F97F81EF27D6D6 /* [CP] Check Pods Manifest.lock */,
+				FEC5C4761DCCBCDC00507485 /* Sources */,
+				FEC5C4771DCCBCDC00507485 /* Frameworks */,
+				FEC5C4781DCCBCDC00507485 /* Resources */,
+				D04DD5EBCE0FFDCB6948677C /* [CP] Embed Pods Frameworks */,
+				C4818F2FDFD1541285F20400 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VkPhotoViewer;
+			productName = VkPhotoViewer;
+			productReference = FEC5C47A1DCCBCDC00507485 /* VkPhotoViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEC5C4721DCCBCDB00507485 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Vitaliy;
+				TargetAttributes = {
+					FEC5C4791DCCBCDC00507485 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = FEC5C4751DCCBCDB00507485 /* Build configuration list for PBXProject "VkPhotoViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEC5C4711DCCBCDB00507485;
+			productRefGroup = FEC5C47B1DCCBCDC00507485 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEC5C4791DCCBCDC00507485 /* VkPhotoViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEC5C4781DCCBCDC00507485 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEC5C4881DCCBCDC00507485 /* LaunchScreen.storyboard in Resources */,
+				FEC5C4851DCCBCDC00507485 /* Assets.xcassets in Resources */,
+				FEC5C4831DCCBCDC00507485 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B134E82AD7F97F81EF27D6D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C4818F2FDFD1541285F20400 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D04DD5EBCE0FFDCB6948677C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEC5C4761DCCBCDC00507485 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEC5C47E1DCCBCDC00507485 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FEC5C4811DCCBCDC00507485 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEC5C4821DCCBCDC00507485 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FEC5C4861DCCBCDC00507485 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEC5C4871DCCBCDC00507485 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEC5C48A1DCCBCDC00507485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEC5C48B1DCCBCDC00507485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEC5C48D1DCCBCDC00507485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC1FA1C50F0AB5E3E9B83396 /* Pods-VkPhotoViewer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VkPhotoViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = home.VkPhotoViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEC5C48E1DCCBCDC00507485 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2CE9ACA52F49E5095AC2DD3 /* Pods-VkPhotoViewer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VkPhotoViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = home.VkPhotoViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEC5C4751DCCBCDB00507485 /* Build configuration list for PBXProject "VkPhotoViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC5C48A1DCCBCDC00507485 /* Debug */,
+				FEC5C48B1DCCBCDC00507485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEC5C48C1DCCBCDC00507485 /* Build configuration list for PBXNativeTarget "VkPhotoViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEC5C48D1DCCBCDC00507485 /* Debug */,
+				FEC5C48E1DCCBCDC00507485 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEC5C4721DCCBCDB00507485 /* Project object */;
+}
