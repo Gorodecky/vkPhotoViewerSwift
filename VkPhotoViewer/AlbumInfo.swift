@@ -9,5 +9,20 @@
 import UIKit
 
 class AlbumInfo: NSObject {
+    
+    var albumName: String
+    var albumID: String
+    var albumThumbID: String
+    var albumUserID: String
+    var albumPhotosCount: Int
+    
+    init(serverResponse: NSDictionary) {
+        
+        albumName = serverResponse["title"] as! String
+        albumID = serverResponse["aid"] as! String
+        albumThumbID = serverResponse["thumb_id"] as! String
+        albumUserID = serverResponse["owner_id"] as! String
+        albumPhotosCount = serverResponse["size"] as! Int
+    }
 
 }
