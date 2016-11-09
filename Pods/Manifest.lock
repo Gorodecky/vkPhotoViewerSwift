@@ -2,18 +2,31 @@ PODS:
   - Alamofire (3.0.0)
   - AlamofireImage (2.0.0):
     - Alamofire (~> 3.0)
+  - SwiftyVK (1.1.5)
   - VK-ios-sdk (1.4.4)
 
 DEPENDENCIES:
   - Alamofire (= 3.0.0)
   - AlamofireImage (= 2.0.0)
+  - SwiftyVK (from `https://github.com/WE-St0r/SwiftyVK.git`, tag `1.1.5`)
   - VK-ios-sdk
+
+EXTERNAL SOURCES:
+  SwiftyVK:
+    :git: https://github.com/WE-St0r/SwiftyVK.git
+    :tag: 1.1.5
+
+CHECKOUT OPTIONS:
+  SwiftyVK:
+    :git: https://github.com/WE-St0r/SwiftyVK.git
+    :tag: 1.1.5
 
 SPEC CHECKSUMS:
   Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
   AlamofireImage: 5cecda9b1031f86067c89ddba1d91ead0a8c3f0e
+  SwiftyVK: 3c8d6e9a2d4284c7b00bc07b9d357360206e7262
   VK-ios-sdk: 296c3be1bb45faf4d9f9a2ca69dcf6ec71d9d4df
 
-PODFILE CHECKSUM: e92ed4413fc4e3c4b4aac76200b03d03e7791bec
+PODFILE CHECKSUM: 789359b6bbb3c77c7908a9e9b7760d6ad6f5eab4
 
 COCOAPODS: 1.1.1

@@ -7,29 +7,24 @@
 //
 
 import UIKit
+import SwiftyVK
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let rect = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+        
+        let webView = UIWebView(frame: rect)
+        
+        self.view.addSubview(webView)
+        
+        
+        
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
