@@ -149,13 +149,22 @@
                     <view key="view" contentMode="scaleToFill" id="dLS-9s-Rha">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-NL-6AW">
+                                <rect key="frame" x="136" y="269" width="94" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="button:" destination="eYO-3L-wQR" eventType="touchUpInside" id="c8n-QZ-03e"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="NZa-ds-gHK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-Vx-6rM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-955" y="801"/>
+            <point key="canvasLocation" x="-897" y="801"/>
         </scene>
     </scenes>
 </document>

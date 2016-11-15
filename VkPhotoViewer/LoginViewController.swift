@@ -14,56 +14,82 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
     let programID = "5185911"
     
-    let scope = [ VK_PER_WALL, VK_PER_PHOTOS]
+    let scope = [VK_PER_WALL, VK_PER_PHOTOS]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startVK()
         button(self)
-        
-        VKSdk.wakeUpSession(scope) { (state, error) -> Void in
-            
-            if state == .Authorized {
-                print("state = \(state.hashValue.description)")
-                
-                
-            } else if error != nil {
-                print("error = \(error)")
-            } else {
-                print("Not authorize!!!")
-                //let scopePermissions = ["email", "wall", "photos"]
-                
-                if VKSdk.vkAppMayExists() == true {
-                    
-                    VKSdk.authorize(self.scope, withOptions: .UnlimitedToken)
-                } else {
-                    VKSdk.authorize(self.scope, withOptions: [.DisableSafariController, .UnlimitedToken])
-                }
-            }
-        }
     }
+    
+    
     @IBAction func button(sender: AnyObject) {
-        VKSdk.authorize(scope)
         print("sender = \(sender)")
+        
+        let sdk = VKSdk.initializeWithAppId(programID)
+        sdk.registerDelegate(self)
+        sdk.uiDelegate = self
+        VKSdk.authorize(scope)
+                
+        startVK()
         
     }
     
     func startVK() {
         
-        let sdk = VKSdk.initializeWithAppId(programID)
-        sdk.registerDelegate(self)
-        
-        sdk.uiDelegate = self
-        
+        VKSdk.wakeUpSession(scope) { (state, error) -> Void in
+            switch state {
+            case .Authorized: print("authorize")
+            case .Initialized: print("inicializer")
+            default : print("error")
+            }
+        }
     }
+    /*5) Check if user already authorized.
+    
+    [VKSdk wakeUpSession:SCOPE completeBlock:^(VKAuthorizationState state, NSError *error) {
+    switch (state) {
+    case VKAuthorizationAuthorized:
+    // User already autorized, and session is correct
+    break;
+    
+    case VKAuthorizationInitialized:
+    // User not yet authorized, proceed to next step
+    break;
+    
+    default:
+    // Probably, network error occured, try call +[VKSdk wakeUpSession:completeBlock:] later
+    break;
+    }
+    }];
+    
+    6) If user is not authorized, call +[VKSdk authorize:] method with required scope (permission for token you required).
+    
+    [VKSdk authorize:@[VK_PER_FRIENDS, VK_PER_WALL]];
+    
+    7) You wait for -[VKSdkDelegate vkSdkAccessAuthorizationFinishedWithResult:] method called.
+    
+    - (void)vkSdkAccessAuthorizationFinishedWithResult:(VKAuthorizationResult *)result {
+    if (result.token) {
+    // User successfully authorized, you may start working with VK API
+    } else if (result.error) {
+    // User canceled authorization, or occured unresolving networking error. Reset your UI to initial state and try authorize user later
+    }
+    }
+    
+    */
+
     
     //PRAGMA MARK: VKSdkDelegate
     
     func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
-        let rezult = VKAuthorizationResult()
+        if result.token != nil {
+            print("token = \(result.token.accessToken) state = \(result.state)")
+        } else {
+            print("error")
+        }
         
-        print("rezult \(rezult)")
+
     }
     
     func vkSdkUserAuthorizationFailed() {
@@ -72,9 +98,9 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
     func vkSdkShouldPresentViewController(controller: UIViewController!) {
         
-        self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+        //self.navigationController?.presentViewController(controller, animated: true, completion: nil)
         
-        //self.navigationController?.showViewController(controller, sender: nil)
+        self.navigationController?.showViewController(controller, sender: nil)
     }
     
     func vkSdkNeedCaptchaEnter(captchaError: VKError!) {
