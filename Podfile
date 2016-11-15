@@ -8,8 +8,6 @@ target 'VkPhotoViewer' do
   # Pods for VkPhotoViewer
 
 pod 'VK-ios-sdk'
-pod 'SwiftyVK', :git => 'https://github.com/WE-St0r/SwiftyVK.git', :tag => '1.1.5'
-
 pod 'Alamofire’, ‘3.0.0’
 pod 'AlamofireImage', ‘2.0.0’
 

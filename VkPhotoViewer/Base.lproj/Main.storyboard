@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vLW-HU-rev">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tSM-eA-nQ3">
             <objects>
-                <viewController id="vLW-HU-rev" sceneMemberID="viewController">
+                <viewController id="vLW-HU-rev" customClass="MainViewController" customModule="VkPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vmb-Wd-Bht"/>
                         <viewControllerLayoutGuide type="bottom" id="MjV-5A-w1i"/>
@@ -26,7 +26,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teH-BH-kAn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
-                                    <segue destination="eYO-3L-wQR" kind="embed" id="gaR-7X-miT"/>
+                                    <segue destination="gsq-fi-6dL" kind="embed" id="Qgs-Gb-XnK"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -42,11 +42,16 @@
                             <constraint firstAttribute="trailing" secondItem="FSl-RM-0uK" secondAttribute="trailing" id="uBc-rP-5pc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="60x-eB-esm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="albumView" destination="FSl-RM-0uK" id="fR1-uC-A88"/>
+                        <outlet property="loginView" destination="teH-BH-kAn" id="SzR-qX-oaR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBr-oC-RCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-702" y="224"/>
+            <point key="canvasLocation" x="-936" y="60"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="45i-K5-aZ1">
@@ -95,14 +100,35 @@
             </objects>
             <point key="canvasLocation" x="84" y="224"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="KT9-G9-leO">
+            <objects>
+                <navigationController id="gsq-fi-6dL" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgC-d7-VxX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eYO-3L-wQR" kind="relationship" relationship="rootViewController" id="ZWT-dd-9rR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3c-My-B6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1356" y="801"/>
+        </scene>
+        <!--Albums View Controller-->
         <scene sceneID="PGR-AY-bKM">
             <objects>
-                <viewController id="XK9-1K-8FJ" sceneMemberID="viewController">
+                <viewController id="XK9-1K-8FJ" customClass="AlbumsViewController" customModule="VkPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8zF-Hd-pbz"/>
+                        <viewControllerLayoutGuide type="bottom" id="1tC-dj-Ksy"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6rq-su-bYi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="dgT-V9-YtR" kind="show" id="8T4-wu-NTn"/>
@@ -112,31 +138,24 @@
             </objects>
             <point key="canvasLocation" x="-316" y="224"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="bKy-Wr-6nF">
             <objects>
-                <viewController id="eYO-3L-wQR" sceneMemberID="viewController">
+                <viewController id="eYO-3L-wQR" customClass="LoginViewController" customModule="VkPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2fL-mi-ORj"/>
+                        <viewControllerLayoutGuide type="bottom" id="oPk-rO-NIa"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dLS-9s-Rha">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LW4-fk-AP7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="LW4-fk-AP7" secondAttribute="bottom" id="9Mp-6I-N7G"/>
-                            <constraint firstItem="LW4-fk-AP7" firstAttribute="top" secondItem="dLS-9s-Rha" secondAttribute="top" id="C9t-kj-mIo"/>
-                            <constraint firstAttribute="trailing" secondItem="LW4-fk-AP7" secondAttribute="trailing" id="H2C-J9-DyE"/>
-                            <constraint firstItem="LW4-fk-AP7" firstAttribute="leading" secondItem="dLS-9s-Rha" secondAttribute="leading" id="rNU-c6-faS"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NZa-ds-gHK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-Vx-6rM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-702" y="896"/>
+            <point key="canvasLocation" x="-955" y="801"/>
         </scene>
     </scenes>
 </document>

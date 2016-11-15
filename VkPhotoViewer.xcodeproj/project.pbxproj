@@ -10,6 +10,7 @@
 		D58A994E18482F7359C261BE /* Pods_VkPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B739718829C76A0C6A705E /* Pods_VkPhotoViewer.framework */; };
 		FE032D801DD38B6C00E1EBF3 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE032D7F1DD38B6C00E1EBF3 /* ServerManager.swift */; };
 		FE7A01041DCD029400F35313 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7A01031DCD029400F35313 /* LoginViewController.swift */; };
+		FEC267CE1DD4C610008069C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC267CD1DD4C610008069C6 /* MainViewController.swift */; };
 		FEC53D8B1DCE29FC004761E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D8A1DCE29FC004761E2 /* User.swift */; };
 		FEC53D8D1DCE2A28004761E2 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D8C1DCE2A28004761E2 /* AlbumInfo.swift */; };
 		FEC53D8F1DCE2A51004761E2 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D8E1DCE2A51004761E2 /* PhotoInfo.swift */; };
@@ -27,6 +28,8 @@
 		EC1FA1C50F0AB5E3E9B83396 /* Pods-VkPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		FE032D7F1DD38B6C00E1EBF3 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		FE7A01031DCD029400F35313 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FE9BDD361DD6332700A908EF /* VkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSDK.h; sourceTree = "<group>"; };
+		FEC267CD1DD4C610008069C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC53D8A1DCE29FC004761E2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FEC53D8C1DCE2A28004761E2 /* AlbumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		FEC53D8E1DCE2A51004761E2 /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 			children = (
 				FE7A01031DCD029400F35313 /* LoginViewController.swift */,
 				FEC53D941DCE2EB0004761E2 /* AlbumsViewController.swift */,
+				FEC267CD1DD4C610008069C6 /* MainViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +106,7 @@
 			children = (
 				FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */,
 				FE7A01001DCCFC8700F35313 /* Models */,
+				FE9BDD361DD6332700A908EF /* VkSDK.h */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				FE7A01041DCD029400F35313 /* LoginViewController.swift in Sources */,
 				FEC5C47E1DCCBCDC00507485 /* AppDelegate.swift in Sources */,
 				FEC53D8B1DCE29FC004761E2 /* User.swift in Sources */,
+				FEC267CE1DD4C610008069C6 /* MainViewController.swift in Sources */,
 				FEC53D8D1DCE2A28004761E2 /* AlbumInfo.swift in Sources */,
 				FEC53D8F1DCE2A51004761E2 /* PhotoInfo.swift in Sources */,
 			);

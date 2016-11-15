@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import SwiftyVK
 
 class ServerManager: NSObject {
     

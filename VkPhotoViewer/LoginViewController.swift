@@ -7,24 +7,81 @@
 //
 
 import UIKit
-import SwiftyVK
+import VK_ios_sdk
 
-class LoginViewController: UIViewController{
 
+class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
+    
+    let programID = "5185911"
+    
+    let scope = [ VK_PER_WALL, VK_PER_PHOTOS]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rect = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
+        startVK()
+        button(self)
         
-        let webView = UIWebView(frame: rect)
-        
-        self.view.addSubview(webView)
-        
-        
-        
-
+        VKSdk.wakeUpSession(scope) { (state, error) -> Void in
+            
+            if state == .Authorized {
+                print("state = \(state.hashValue.description)")
+                
+                
+            } else if error != nil {
+                print("error = \(error)")
+            } else {
+                print("Not authorize!!!")
+                //let scopePermissions = ["email", "wall", "photos"]
+                
+                if VKSdk.vkAppMayExists() == true {
+                    
+                    VKSdk.authorize(self.scope, withOptions: .UnlimitedToken)
+                } else {
+                    VKSdk.authorize(self.scope, withOptions: [.DisableSafariController, .UnlimitedToken])
+                }
+            }
+        }
     }
-
+    @IBAction func button(sender: AnyObject) {
+        VKSdk.authorize(scope)
+        print("sender = \(sender)")
+        
+    }
     
-
+    func startVK() {
+        
+        let sdk = VKSdk.initializeWithAppId(programID)
+        sdk.registerDelegate(self)
+        
+        sdk.uiDelegate = self
+        
+    }
+    
+    //PRAGMA MARK: VKSdkDelegate
+    
+    func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
+        let rezult = VKAuthorizationResult()
+        
+        print("rezult \(rezult)")
+    }
+    
+    func vkSdkUserAuthorizationFailed() {
+        
+    }
+    
+    func vkSdkShouldPresentViewController(controller: UIViewController!) {
+        
+        self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+        
+        //self.navigationController?.showViewController(controller, sender: nil)
+    }
+    
+    func vkSdkNeedCaptchaEnter(captchaError: VKError!) {
+        print(captchaError)
+    }
+    
 }
+
+
+

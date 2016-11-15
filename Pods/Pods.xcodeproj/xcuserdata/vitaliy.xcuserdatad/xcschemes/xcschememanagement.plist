@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyVK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>VK-ios-sdk-VKSdkResources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12728B63EA23F3AD0A705830104A67BB</key>
+		<key>0EB283EFFBF1952C3B620FAAEC2F3FFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C72980ABD263BD8F78914016131EACA</key>
+		<key>26ACAACEF57BEEC65A2334BA18207408</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,12 +47,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AEA6F92C2986AC1B1DE5CC36B3914A2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7AB5A7E50C4089E7C18728811D96350D</key>
+		<key>4A345380A0143055E60BE6EEBA2408E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

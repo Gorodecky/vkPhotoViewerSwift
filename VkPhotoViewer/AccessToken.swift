@@ -9,5 +9,11 @@
 import UIKit
 
 class AccessToken: NSObject {
+    
+    let token : String = ""
+    let expirationDate : String = ""
+    let userID : String = ""
+    
+    
 
 }
