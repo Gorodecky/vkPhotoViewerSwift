@@ -28,7 +28,6 @@
 		EC1FA1C50F0AB5E3E9B83396 /* Pods-VkPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		FE032D7F1DD38B6C00E1EBF3 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		FE7A01031DCD029400F35313 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FE9BDD361DD6332700A908EF /* VkSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VkSDK.h; sourceTree = "<group>"; };
 		FEC267CD1DD4C610008069C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC53D8A1DCE29FC004761E2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FEC53D8C1DCE2A28004761E2 /* AlbumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
@@ -106,7 +105,6 @@
 			children = (
 				FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */,
 				FE7A01001DCCFC8700F35313 /* Models */,
-				FE9BDD361DD6332700A908EF /* VkSDK.h */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
