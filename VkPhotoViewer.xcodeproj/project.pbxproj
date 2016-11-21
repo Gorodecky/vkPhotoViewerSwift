@@ -13,7 +13,6 @@
 		FEC267CE1DD4C610008069C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC267CD1DD4C610008069C6 /* MainViewController.swift */; };
 		FEC53D8D1DCE2A28004761E2 /* AlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D8C1DCE2A28004761E2 /* AlbumInfo.swift */; };
 		FEC53D8F1DCE2A51004761E2 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D8E1DCE2A51004761E2 /* PhotoInfo.swift */; };
-		FEC53D931DCE2E05004761E2 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D921DCE2E05004761E2 /* AccessToken.swift */; };
 		FEC53D951DCE2EB0004761E2 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC53D941DCE2EB0004761E2 /* AlbumsViewController.swift */; };
 		FEC5C47E1DCCBCDC00507485 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */; };
 		FEC5C4831DCCBCDC00507485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC5C4811DCCBCDC00507485 /* Main.storyboard */; };
@@ -30,7 +29,6 @@
 		FEC267CD1DD4C610008069C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC53D8C1DCE2A28004761E2 /* AlbumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumInfo.swift; sourceTree = "<group>"; };
 		FEC53D8E1DCE2A51004761E2 /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
-		FEC53D921DCE2E05004761E2 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		FEC53D941DCE2EB0004761E2 /* AlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		FEC5C47A1DCCBCDC00507485 /* VkPhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkPhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC5C47D1DCCBCDC00507485 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		FE7A01011DCCFC9800F35313 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FEC53D921DCE2E05004761E2 /* AccessToken.swift */,
 				FE032D7F1DD38B6C00E1EBF3 /* ServerManager.swift */,
 			);
 			name = API;
@@ -262,7 +259,6 @@
 			files = (
 				FE032D801DD38B6C00E1EBF3 /* ServerManager.swift in Sources */,
 				FEC53D951DCE2EB0004761E2 /* AlbumsViewController.swift in Sources */,
-				FEC53D931DCE2E05004761E2 /* AccessToken.swift in Sources */,
 				FE7A01041DCD029400F35313 /* LoginViewController.swift in Sources */,
 				FEC5C47E1DCCBCDC00507485 /* AppDelegate.swift in Sources */,
 				FEC267CE1DD4C610008069C6 /* MainViewController.swift in Sources */,

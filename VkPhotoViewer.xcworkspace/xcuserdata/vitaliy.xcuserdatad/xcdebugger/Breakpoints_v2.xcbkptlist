@@ -37,46 +37,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VkPhotoViewer/AlbumsViewController.swift"
-            timestampString = "501416561.083924"
+            filePath = "VkPhotoViewer/LoginViewController.swift"
+            timestampString = "501412403.834407"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "getAlbums()"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "startVK()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VkPhotoViewer.AlbumsViewController.(getAlbums (VkPhotoViewer.AlbumsViewController) -&gt; () -&gt; ()).(closure #1)"
-                  moduleName = "VkPhotoViewer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitaliy/Documents/Vitaliy/SWIFT/ForTest/VkPhotoViewer/VkPhotoViewer/AlbumsViewController.swift"
-                  timestampString = "501416562.094209"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "1121">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VkPhotoViewer.AlbumsViewController.(getAlbums (VkPhotoViewer.AlbumsViewController) -&gt; () -&gt; ()).(closure #1)"
-                  moduleName = "VkPhotoViewer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vitaliy/Documents/Vitaliy/SWIFT/ForTest/VkPhotoViewer/VkPhotoViewer/AlbumsViewController.swift"
-                  timestampString = "501416562.094514"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "1133">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -85,13 +53,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VkPhotoViewer/LoginViewController.swift"
-            timestampString = "501412403.834407"
+            filePath = "VkPhotoViewer/AlbumsViewController.swift"
+            timestampString = "501451301.089811"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "startVK()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getAlbums()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

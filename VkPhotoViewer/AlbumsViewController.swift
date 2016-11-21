@@ -9,14 +9,13 @@
 import UIKit
 import VK_ios_sdk
 import Foundation
+import SwiftyJSON
 
 
 class AlbumsViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSource*/ {
     
-    var albumsArray : [AlbumInfo] = []
-    var albumsDict = [NSDictionary]()
+    var albumsArray  = [NSArray]()
 
-    
     //@IBOutlet weak var tableView: UITableView!
     
         override func viewDidLoad() {
@@ -33,42 +32,39 @@ class AlbumsViewController: UIViewController/*, UITableViewDelegate, UITableView
         
         getRequest.executeWithResultBlock({ (response) -> Void in
             
-            if response != nil {
-                let items = response.json as! NSDictionary
+            if response.json.count > 0 {
                 
-                let albums = items.valueForKey("items") as! NSArray
+                let jsonAlbums = JSON(response.json)
                 
-                print("albums = \(albums.count)")
+                self.albumsArray = jsonAlbums["items"].arrayObject as! [NSArray]
                 
-                for album in albums {
+                for album in self.albumsArray {
                     
-                    
+                    print(album)
                 }
-                
-            //self.albumsDict = response.json as! [NSDictionary]
-                
-                
+            
+            
+            
             
             }
-            
-            
+    
             }) { (error) -> Void in
                 print("error = \(error)")
         }
     }
-    
-    func getPhotoInformationForAlbums() {
-       /*
-        for var album in self.albumsArray {
+    /*
+    func getPhotoInformationForAlbums(array : [NSArray]) {
+        
+        for var album in array  {
             
-            album = AlbumInfo(serverResponse: <#T##NSDictionary#>)
+            album = AlbumInfo(serverResponse: <#T##[String : AnyObject]#>)
             
             albumsArray.append(album)
             
         }
-        */
+        
     }
-
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

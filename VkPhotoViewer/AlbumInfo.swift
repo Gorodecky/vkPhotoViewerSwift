@@ -16,7 +16,7 @@ class AlbumInfo: NSObject {
     var albumUserID: String
     var albumPhotosCount: Int
     
-    init(serverResponse: NSDictionary) {
+    init(serverResponse: [String:AnyObject]) {
         
         albumName = serverResponse["title"] as! String
         albumID = serverResponse["aid"] as! String
