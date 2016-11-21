@@ -31,12 +31,18 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
         let sdkInstance = VKSdk.initializeWithAppId(programID)
         sdkInstance.registerDelegate(self)
         sdkInstance.uiDelegate = self
-        
+        VKSdk.authorize(SCOPE)
+        if VKSdk.accessToken() != nil {
+            goToAlbumsViewControler()
+        }
+        /*
         VKSdk.wakeUpSession(SCOPE) { (state, error) -> Void in
             
             if state == VKAuthorizationState.Authorized {
                 
                 print(".Authorized")
+                
+                //self.goToAlbumsViewControler()
                 
             } else if state == VKAuthorizationState.Initialized {
                 print("Initialized")
@@ -44,14 +50,20 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
                 
                 print("error = \(error)")
             }
-
-        }
+        }*/
     }
     
-    //PRAGMA MARK: VKSdkDelegate
+    func goToAlbumsViewControler() {
+        
+        let vc = MainViewController()
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
+    //MARK: VKSdkDelegate
     
     func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
-        
         
         /*
         if result.token != nil {
