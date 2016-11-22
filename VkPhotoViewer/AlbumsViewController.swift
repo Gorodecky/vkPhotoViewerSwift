@@ -14,8 +14,8 @@ import SwiftyJSON
 
 class AlbumsViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSource*/ {
     
-    var albumsArray  = [NSArray]()
-
+    var albumsArray : [AlbumInfo] = []
+    
     //@IBOutlet weak var tableView: UITableView!
     
         override func viewDidLoad() {
@@ -24,47 +24,59 @@ class AlbumsViewController: UIViewController/*, UITableViewDelegate, UITableView
             }
     
     func getAlbums() {
-        
+        ///////////////////////////////////
         let method = "photos.getAlbums"
         let parametrs = ["user_id": VKSdk.accessToken().userId]
         
         let getRequest = VKRequest(method: method, parameters: parametrs, modelClass: nil)
         
         getRequest.executeWithResultBlock({ (response) -> Void in
+            let json = JSON(response.json)
             
-            if response.json.count > 0 {
+            if let items = json["items"].arrayObject {
                 
-                let jsonAlbums = JSON(response.json)
-                
-                self.albumsArray = jsonAlbums["items"].arrayObject as! [NSArray]
-                
-                for album in self.albumsArray {
+                for item in items {
+                    let jsonItem = JSON(item)
+                    self.albumsArray.append(AlbumInfo(serverResponse: jsonItem))
                     
-                    print(album)
                 }
-            
-            
-            
-            
+                self.getPhotoInformationForAlbums()
+
             }
+            
+            print("self.albumsArray.count = \(self.albumsArray.count)")
     
             }) { (error) -> Void in
                 print("error = \(error)")
         }
     }
-    /*
-    func getPhotoInformationForAlbums(array : [NSArray]) {
+    
+    func getPhotoInformationForAlbums() {
         
-        for var album in array  {
+        for album in self.albumsArray {
             
-            album = AlbumInfo(serverResponse: <#T##[String : AnyObject]#>)
+            let methodAlbum = "photos.get"
+            let parametrsAlbum = ["owner_id": VKSdk.accessToken().userId,
+            "album_id": album.albumID]
             
-            albumsArray.append(album)
+            let getAlbumRequest = VKRequest(method: methodAlbum, parameters: parametrsAlbum, modelClass: nil)
+            
+            getAlbumRequest.executeWithResultBlock({ (response) -> Void in
+                
+                let jsonAlbum = JSON(response.json)
+                
+                print("jsonAlbum = \(jsonAlbum)")
+            
+                }, errorBlock: { (error) -> Void in
+                    print(error)
+            })
+            
+            
             
         }
         
     }
-*/
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

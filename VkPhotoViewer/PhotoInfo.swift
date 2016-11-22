@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class PhotoInfo: NSObject {
     
@@ -16,12 +17,12 @@ class PhotoInfo: NSObject {
     var albumId: String
     var ownerId: String
     
-    init(responseObject: NSDictionary) {
+    init(responseObject: JSON) {
         
-        photoId = responseObject["pid"] as! String
-        photoPreviewUrl = responseObject["src_small"] as! String
-        photoUrl = responseObject["src_big"] as! String
-        albumId = responseObject["aid"] as! String
-        ownerId = responseObject["owner_id"] as! String
+        photoId = responseObject["pid"].stringValue
+        photoPreviewUrl = responseObject["src_small"].stringValue
+        photoUrl = responseObject["src_big"].stringValue
+        albumId = responseObject["aid"].stringValue
+        ownerId = responseObject["owner_id"].stringValue
     }
 }

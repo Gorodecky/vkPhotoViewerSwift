@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class AlbumInfo: NSObject {
     
@@ -16,13 +18,13 @@ class AlbumInfo: NSObject {
     var albumUserID: String
     var albumPhotosCount: Int
     
-    init(serverResponse: [String:AnyObject]) {
+    init(serverResponse: JSON) {
         
-        albumName = serverResponse["title"] as! String
-        albumID = serverResponse["aid"] as! String
-        albumThumbID = serverResponse["thumb_id"] as! String
-        albumUserID = serverResponse["owner_id"] as! String
-        albumPhotosCount = serverResponse["size"] as! Int
+        albumName = serverResponse["title"].stringValue
+        albumID = serverResponse["id"].stringValue
+        albumThumbID = serverResponse["thumb_id"].stringValue
+        albumUserID = serverResponse["owner_id"].stringValue
+        albumPhotosCount = serverResponse["size"].intValue
     }
 
 }
