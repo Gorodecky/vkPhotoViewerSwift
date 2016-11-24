@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-VkPhotoViewer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>48DF6E4F3D0C1A5868A986C7758F65C5</key>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DB4A473CF18201E89EB4DFE33FDF840</key>
+		<key>65F2DE15AFC89C217DA16D2CF41D3902</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89F3C10CECF139CC9BC57BE197141E9B</key>
+		<key>85A0D7E4EC645EED7C6C88C886552D33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98D09477FE60CE610DC22B71D315FF66</key>
+		<key>A1BF58736B6CCECB5DB30E2108366143</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFFACEDE0AC0C9906EBB89575983739B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2CFCD41C03A2D94AF01A4C652DA9D05</key>
 		<dict>
 			<key>primary</key>
 			<true/>

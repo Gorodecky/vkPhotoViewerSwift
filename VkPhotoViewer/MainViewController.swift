@@ -21,7 +21,7 @@ class MainViewController: UIViewController, VKSdkDelegate {
     @IBOutlet weak var albumView: UIView!
     @IBOutlet weak var loginView: UIView!
     
-    var albumsView: AlbumsViewController?
+    var albumsView: AlbumsViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

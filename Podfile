@@ -6,6 +6,9 @@ target 'VkPhotoViewer' do
   use_frameworks!
   pod 'VK-ios-sdk'
   pod 'SwiftyJSON', '~> 2.4.0'
+  pod 'Alamofire’, ‘3.0.0’
+  pod 'AlamofireImage', ‘2.0.0’
+
   # Pods for VkPhotoViewer
 
 end

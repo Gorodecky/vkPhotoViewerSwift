@@ -19,10 +19,10 @@ class PhotoInfo: NSObject {
     
     init(responseObject: JSON) {
         
-        photoId = responseObject["pid"].stringValue
-        photoPreviewUrl = responseObject["src_small"].stringValue
-        photoUrl = responseObject["src_big"].stringValue
-        albumId = responseObject["aid"].stringValue
+        photoId = responseObject["id"].stringValue
+        photoPreviewUrl = responseObject["photo_75"].stringValue
+        photoUrl = responseObject["photo_604"].stringValue
+        albumId = responseObject["album_id"].stringValue
         ownerId = responseObject["owner_id"].stringValue
     }
 }

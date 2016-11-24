@@ -17,6 +17,8 @@ class AlbumInfo: NSObject {
     var albumThumbID: String
     var albumUserID: String
     var albumPhotosCount: Int
+    var albumPreview : String?
+    var photos: [PhotoInfo]?
     
     init(serverResponse: JSON) {
         
