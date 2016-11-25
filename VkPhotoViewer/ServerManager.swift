@@ -8,6 +8,8 @@
 
 import UIKit
 import Foundation
+import Alamofire
+import AlamofireImage
 
 class ServerManager: NSObject {
     

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell" customModule="VkPhotoViewer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uUP-mJ-OkR">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="g5I-fM-yR2">
+                        <rect key="frame" x="40" y="40" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="g5I-fM-yR2" firstAttribute="centerX" secondItem="uUP-mJ-OkR" secondAttribute="centerX" id="3WN-d7-XCT"/>
+                <constraint firstItem="g5I-fM-yR2" firstAttribute="centerY" secondItem="uUP-mJ-OkR" secondAttribute="centerY" id="8NI-lp-zrE"/>
+                <constraint firstItem="uUP-mJ-OkR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DuY-80-bop"/>
+                <constraint firstItem="uUP-mJ-OkR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OO7-uB-pXz"/>
+                <constraint firstAttribute="trailing" secondItem="uUP-mJ-OkR" secondAttribute="trailing" id="dw6-3e-2zS"/>
+                <constraint firstAttribute="bottom" secondItem="uUP-mJ-OkR" secondAttribute="bottom" id="g7c-cU-xjE"/>
+            </constraints>
+            <connections>
+                <outlet property="indicator" destination="g5I-fM-yR2" id="4K7-5K-VJk"/>
+                <outlet property="photoImage" destination="uUP-mJ-OkR" id="sdR-F3-WFE"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
