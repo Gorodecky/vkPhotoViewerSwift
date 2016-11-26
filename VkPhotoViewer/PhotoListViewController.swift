@@ -10,42 +10,72 @@ import UIKit
 
 class PhotoListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
+    @IBOutlet weak var titleNavigationItem: UINavigationItem!
+    @IBOutlet weak var photoPreView: UIView!
+    @IBOutlet weak var indicatorPreView: UIActivityIndicatorView!
+    @IBOutlet weak var imagePreView: UIImageView!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
-    var album : [PhotoInfo] = []
-    var nibMyCellLoaded = false
+    var album : AlbumInfo?
+    let identifierCell = "photoCollectionCellIdentifier"
+    var nibMyCellLoaded: Bool?
+
     
+    
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
+        nibMyCellLoaded = false
         super.viewDidLoad()
+        photoPreView.hidden = true
         
+        print(album!.photos?.count)
+        titleNavigationItem.title = album!.albumName
         
+        photoCollectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: identifierCell)
+        photoCollectionView.delegate = self
+        photoCollectionView.dataSource = self
         
-        
-        print(album.count)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        }
     
     
     // MARK: UICollectionViewDataSource
     
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return album.count
+        return (album?.photos?.count)!
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCellIdentifier", forIndexPath: indexPath)
+        if nibMyCellLoaded == false {
+            
+            let nib : UINib = UINib(nibName: "PhotoCollectionViewCell", bundle: nil)
+            
+            collectionView.registerNib(nib, forCellWithReuseIdentifier: identifierCell)
+            
+            nibMyCellLoaded = true
+        }
         
-        cell.backgroundView?.backgroundColor = UIColor.blueColor()
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifierCell, forIndexPath: indexPath) as! PhotoCollectionViewCell
+        cell.backgroundColor = UIColor.whiteColor()
+        
+        let photo = album?.photos![indexPath.row]
+        
+        cell.udateWithPhotoInfo(photo!)
+        
         return cell
     }
+    
+    
+    // MARK: CloseButton
+    @IBAction func closeButtonPreView(sender: AnyObject) {
+        
+        
+    }
+
 
     /*
     // MARK: - Navigation

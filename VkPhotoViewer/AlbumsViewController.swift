@@ -118,7 +118,7 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
        if segue.identifier == "PhotoListIdentifier" {
         let photoListVC = segue.destinationViewController as! PhotoListViewController
         
-       photoListVC.album = self.albumsArray[selectedRow].photos!
+       photoListVC.album = self.albumsArray[selectedRow]
         
         }
     }

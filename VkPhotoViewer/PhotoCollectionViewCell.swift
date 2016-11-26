@@ -21,14 +21,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         indicator.hidden = false
         indicator.startAnimating()
+        
     }
     
     func udateWithPhotoInfo(photoInfo: PhotoInfo) {
+        print("photoInfo.photoPreviewUrl = \(photoInfo.photoPreviewUrl)")
         
-        if  photoInfo.photoPreviewUrl.characters.count > 0 {
-            
-            indicator.hidden = false
-            indicator.startAnimating()
+        
+            //indicator.startAnimating()
             let urlString = (photoInfo.photoPreviewUrl) as String
             
             getNetworkImage(urlString, completion: { (image) -> Void in
@@ -37,7 +37,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
                 self.indicator.stopAnimating()
                 self.indicator.hidden = true
             })
-        }
     }
     
     func getNetworkImage(urlString: String, completion: (UIImage? -> Void)) -> (Request) {

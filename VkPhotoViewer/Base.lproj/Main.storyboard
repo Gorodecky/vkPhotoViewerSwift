@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -77,8 +76,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-OO-nVA">
-                                                    <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-OO-nVA">
+                                                    <rect key="frame" x="8" y="8" width="304" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -149,21 +148,37 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKX-7d-Nua">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-k3-cIk">
+                                        <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etd-9H-gX3">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-BN-hdu">
+                                        <rect key="frame" x="280" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="2JZ-pm-ghb"/>
+                                            <constraint firstAttribute="height" constant="40" id="trU-1g-tuN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Closed.png"/>
+                                        <connections>
+                                            <action selector="closeButtonPreView:" destination="b6x-Yw-ebI" eventType="touchUpInside" id="6ox-bI-C6W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-k3-cIk">
-                                <rect key="frame" x="150" y="274" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etd-9H-gX3">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-BN-hdu">
-                                <rect key="frame" x="278" y="0.0" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="2JZ-pm-ghb"/>
+                                    <constraint firstItem="etd-9H-gX3" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="4Ra-zN-u6K"/>
+                                    <constraint firstAttribute="trailing" secondItem="etd-9H-gX3" secondAttribute="trailing" id="8yt-al-og6"/>
+                                    <constraint firstAttribute="trailing" secondItem="4mF-BN-hdu" secondAttribute="trailing" id="BHV-2f-veX"/>
+                                    <constraint firstItem="4mF-BN-hdu" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="GyQ-e9-1r8"/>
+                                    <constraint firstItem="Dn0-k3-cIk" firstAttribute="centerX" secondItem="SKX-7d-Nua" secondAttribute="centerX" id="N1L-mW-TbU"/>
+                                    <constraint firstAttribute="bottom" secondItem="etd-9H-gX3" secondAttribute="bottom" id="Zdt-wA-3gS"/>
+                                    <constraint firstItem="etd-9H-gX3" firstAttribute="leading" secondItem="SKX-7d-Nua" secondAttribute="leading" id="egq-Qw-LoG"/>
+                                    <constraint firstItem="Dn0-k3-cIk" firstAttribute="centerY" secondItem="SKX-7d-Nua" secondAttribute="centerY" id="gt3-RF-VaV"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Closed.png"/>
-                            </button>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-Zc-huR">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hfw-1P-tzw">
@@ -187,35 +202,39 @@
                             </collectionView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1h-xG-PLp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem id="HLp-o3-xa7">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="4t9-fT-7Sy">
+                                            <connections>
+                                                <segue destination="vLW-HU-rev" kind="show" identifier="backButtonSegueIdentifier" id="OOd-LS-dgl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="N1h-xG-PLp" secondAttribute="trailing" id="9T4-gE-GWd"/>
-                            <constraint firstAttribute="trailing" secondItem="etd-9H-gX3" secondAttribute="trailing" id="D9L-Fs-r4v"/>
-                            <constraint firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="FbY-ka-upD"/>
-                            <constraint firstItem="etd-9H-gX3" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="IVm-CM-byH"/>
-                            <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="etd-9H-gX3" secondAttribute="bottom" id="Izn-eY-TQI"/>
-                            <constraint firstItem="SKX-7d-Nua" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="Ria-KL-OGE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4mF-BN-hdu" secondAttribute="trailing" constant="-14" id="TYt-It-JFp"/>
-                            <constraint firstItem="SKX-7d-Nua" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="Tra-Jz-XfL"/>
-                            <constraint firstItem="9GI-Zc-huR" firstAttribute="bottom" secondItem="AAd-CU-wb6" secondAttribute="top" id="USX-CC-ACK"/>
-                            <constraint firstItem="N1h-xG-PLp" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="Une-xx-ZoV"/>
-                            <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="bottom" id="ZyN-dU-6Nw"/>
-                            <constraint firstItem="9GI-Zc-huR" firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="dDp-1C-oG1"/>
-                            <constraint firstItem="4mF-BN-hdu" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="euQ-cg-Jj0"/>
-                            <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="4mF-BN-hdu" secondAttribute="bottom" constant="528" id="hCG-6g-S5y"/>
-                            <constraint firstItem="N1h-xG-PLp" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="hTU-XL-gxk"/>
-                            <constraint firstItem="Dn0-k3-cIk" firstAttribute="centerX" secondItem="SKX-7d-Nua" secondAttribute="centerX" id="jNE-Bh-SsY"/>
-                            <constraint firstItem="etd-9H-gX3" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="kyd-5I-BDk"/>
-                            <constraint firstItem="9GI-Zc-huR" firstAttribute="leading" secondItem="SKX-7d-Nua" secondAttribute="leading" id="lP5-tF-Cte"/>
-                            <constraint firstItem="9GI-Zc-huR" firstAttribute="top" secondItem="N1h-xG-PLp" secondAttribute="bottom" id="qWd-8p-eoE"/>
-                            <constraint firstItem="Dn0-k3-cIk" firstAttribute="centerY" secondItem="SKX-7d-Nua" secondAttribute="centerY" id="tTE-Ch-dWp"/>
+                            <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="bottom" id="2ys-bQ-iUo"/>
+                            <constraint firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="52X-0H-99u"/>
+                            <constraint firstItem="N1h-xG-PLp" firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="Bu6-d2-Yxb"/>
+                            <constraint firstItem="SKX-7d-Nua" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="Hse-gs-GIS"/>
+                            <constraint firstItem="9GI-Zc-huR" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="OPx-cA-mrl"/>
+                            <constraint firstAttribute="trailing" secondItem="9GI-Zc-huR" secondAttribute="trailing" id="RuQ-DK-kh1"/>
+                            <constraint firstItem="N1h-xG-PLp" firstAttribute="leading" secondItem="9GI-Zc-huR" secondAttribute="leading" id="T3K-lG-wOJ"/>
+                            <constraint firstItem="N1h-xG-PLp" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="Tep-Gf-18r"/>
+                            <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="9GI-Zc-huR" secondAttribute="bottom" id="YuN-hU-iHz"/>
+                            <constraint firstItem="9GI-Zc-huR" firstAttribute="top" secondItem="N1h-xG-PLp" secondAttribute="bottom" id="kyK-M1-cZM"/>
+                            <constraint firstItem="SKX-7d-Nua" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="wJf-gQ-LYL"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="imagePreView" destination="etd-9H-gX3" id="EoF-e9-KNw"/>
+                        <outlet property="indicatorPreView" destination="Dn0-k3-cIk" id="FPw-Nr-Cw1"/>
                         <outlet property="photoCollectionView" destination="9GI-Zc-huR" id="PL1-Eq-oWa"/>
+                        <outlet property="photoPreView" destination="SKX-7d-Nua" id="Ydr-lc-HK3"/>
+                        <outlet property="titleNavigationItem" destination="HLp-o3-xa7" id="34i-G1-xj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJj-VY-u3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
