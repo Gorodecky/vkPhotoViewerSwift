@@ -11,6 +11,7 @@
 		FE032D801DD38B6C00E1EBF3 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE032D7F1DD38B6C00E1EBF3 /* ServerManager.swift */; };
 		FE7A01041DCD029400F35313 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7A01031DCD029400F35313 /* LoginViewController.swift */; };
 		FE83B0831DE785DA00E04786 /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83B0821DE785DA00E04786 /* PhotoListViewController.swift */; };
+		FEB718EA1DEB1C5A0054C4ED /* Close button.svg_0.png in Resources */ = {isa = PBXBuildFile; fileRef = FEB718E91DEB1C5A0054C4ED /* Close button.svg_0.png */; };
 		FEC267CE1DD4C610008069C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC267CD1DD4C610008069C6 /* MainViewController.swift */; };
 		FEC4D92F1DE83728003FE377 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC4D92D1DE83728003FE377 /* PhotoCollectionViewCell.swift */; };
 		FEC4D9301DE83728003FE377 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC4D92E1DE83728003FE377 /* PhotoCollectionViewCell.xib */; };
@@ -32,6 +33,7 @@
 		FE032D7F1DD38B6C00E1EBF3 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		FE7A01031DCD029400F35313 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE83B0821DE785DA00E04786 /* PhotoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		FEB718E91DEB1C5A0054C4ED /* Close button.svg_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Close button.svg_0.png"; sourceTree = "<group>"; };
 		FEC267CD1DD4C610008069C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FEC4D92D1DE83728003FE377 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		FEC4D92E1DE83728003FE377 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		FEC4D9311DE85C36003FE377 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FEB718E91DEB1C5A0054C4ED /* Close button.svg_0.png */,
 				FEC4D9321DE85C66003FE377 /* Closed.png */,
 			);
 			name = Image;
@@ -229,6 +232,7 @@
 			files = (
 				FEC5C4881DCCBCDC00507485 /* LaunchScreen.storyboard in Resources */,
 				FEC4D9301DE83728003FE377 /* PhotoCollectionViewCell.xib in Resources */,
+				FEB718EA1DEB1C5A0054C4ED /* Close button.svg_0.png in Resources */,
 				FEC4D9331DE85C66003FE377 /* Closed.png in Resources */,
 				FEC5C4851DCCBCDC00507485 /* Assets.xcassets in Resources */,
 				FEC5C4831DCCBCDC00507485 /* Main.storyboard in Resources */,

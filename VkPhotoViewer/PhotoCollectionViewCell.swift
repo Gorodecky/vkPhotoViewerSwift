@@ -45,8 +45,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             
             guard let image = response.result.value
                 
-                else {
-                    return }
+                else { return }
             completion(image)
         }
     }

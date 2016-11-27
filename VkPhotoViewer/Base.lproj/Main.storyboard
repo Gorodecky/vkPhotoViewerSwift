@@ -76,18 +76,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CI9-Ux-9YL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vri-OO-nVA">
                                                     <rect key="frame" x="8" y="8" width="304" height="23"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <color key="textColor" red="1" green="0.14300995399999999" blue="0.2070317676" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sY5-En-DAZ">
                                                     <rect key="frame" x="150" y="40" width="20" height="20"/>
                                                 </activityIndicatorView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CI9-Ux-9YL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="CI9-Ux-9YL" secondAttribute="trailing" id="EvB-SW-ROU"/>
@@ -152,7 +152,7 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-k3-cIk">
                                         <rect key="frame" x="150" y="274" width="20" height="20"/>
                                     </activityIndicatorView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etd-9H-gX3">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etd-9H-gX3">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-BN-hdu">
@@ -161,7 +161,7 @@
                                             <constraint firstAttribute="width" constant="40" id="2JZ-pm-ghb"/>
                                             <constraint firstAttribute="height" constant="40" id="trU-1g-tuN"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Closed.png"/>
+                                        <state key="normal" title="Button" image="Close button.svg_0.png"/>
                                         <connections>
                                             <action selector="closeButtonPreView:" destination="b6x-Yw-ebI" eventType="touchUpInside" id="6ox-bI-C6W"/>
                                         </connections>
@@ -232,6 +232,7 @@
                     <connections>
                         <outlet property="imagePreView" destination="etd-9H-gX3" id="EoF-e9-KNw"/>
                         <outlet property="indicatorPreView" destination="Dn0-k3-cIk" id="FPw-Nr-Cw1"/>
+                        <outlet property="navigationBar" destination="N1h-xG-PLp" id="ShJ-pA-QmY"/>
                         <outlet property="photoCollectionView" destination="9GI-Zc-huR" id="PL1-Eq-oWa"/>
                         <outlet property="photoPreView" destination="SKX-7d-Nua" id="Ydr-lc-HK3"/>
                         <outlet property="titleNavigationItem" destination="HLp-o3-xa7" id="34i-G1-xj3"/>
@@ -288,6 +289,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Closed.png" width="34" height="34"/>
+        <image name="Close button.svg_0.png" width="220" height="220"/>
     </resources>
 </document>
