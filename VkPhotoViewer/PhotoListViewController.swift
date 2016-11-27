@@ -60,6 +60,7 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         }
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifierCell, forIndexPath: indexPath) as! PhotoCollectionViewCell
+        
         cell.backgroundColor = UIColor.whiteColor()
         
         let photo = album?.photos![indexPath.row]
@@ -67,6 +68,15 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         cell.udateWithPhotoInfo(photo!)
         
         return cell
+    }
+    
+    //MARK: UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+       
+        print("indexPath.row = \(indexPath.row)")
+        
+        
     }
     
     

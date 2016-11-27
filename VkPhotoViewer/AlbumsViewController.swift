@@ -20,8 +20,6 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
     
     var albumsArray : [AlbumInfo] = []
     
-    var selectedRow = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +27,9 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func getAlbums() {
         ///////////////////////////////////
-        var selectedRow = 0
         let method = "photos.getAlbums"
         let parametrs = ["user_id": VKSdk.accessToken().userId]
-        //var album :AlbumInfo?
+
         let getRequest = VKRequest(method: method, parameters: parametrs, modelClass: nil)
         
         getRequest.executeWithResultBlock({ (response) -> Void in
@@ -62,10 +59,9 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
                         }
                         
                         self.albumTableView.reloadData()
-
+                        
                     })
                 }
-                
                 //self.albumTableView.registerNib(UINib(nibName: "PhotoPreviewCell", bundle: nil), forCellReuseIdentifier: self.kPhotoPreviewCellIdentifier)
             }
             print("self.albumsArray.count = \(self.albumsArray.count)")
@@ -111,23 +107,23 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.performSegueWithIdentifier("PhotoListIdentifier", sender: self)
         
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       if segue.identifier == "PhotoListIdentifier" {
-        let photoListVC = segue.destinationViewController as! PhotoListViewController
         
-       photoListVC.album = self.albumsArray[selectedRow]
-        
+        if segue.identifier == "PhotoListIdentifier" {
+            let photoListVC = segue.destinationViewController as! PhotoListViewController
+            
+            if let indexPath = self.albumTableView.indexPathForSelectedRow {
+                let selectedAlbum = albumsArray[indexPath.row]
+                photoListVC.album = selectedAlbum
+            }
         }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
     }
-
-
     
     // MARK: - UITableViewDataSource
     
@@ -135,13 +131,11 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
         return self.albumsArray.count
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: PhotoPreviewCell = self.albumTableView.dequeueReusableCellWithIdentifier(kPhotoPreviewCellIdentifier) as! PhotoPreviewCell
         
         let album = self.albumsArray[indexPath.row]
-        self.selectedRow = indexPath.row
         cell.updateWithAlbumInformation(album)
         
         return cell
@@ -156,5 +150,4 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
     // Pass the selected object to the new view controller.
     }
     */
-    
 }
