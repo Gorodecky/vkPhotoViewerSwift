@@ -9,7 +9,6 @@
 import UIKit
 import VK_ios_sdk
 
-
 class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
     let programID = "5185911"
@@ -22,59 +21,33 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     @IBAction func button(sender: AnyObject) {
-       
         startVK()
     }
-   
+    
     func startVK() {
         
         let sdkInstance = VKSdk.initializeWithAppId(programID)
         sdkInstance.registerDelegate(self)
         sdkInstance.uiDelegate = self
         VKSdk.authorize(SCOPE)
+        
         if VKSdk.accessToken() != nil {
             goToAlbumsViewControler()
         }
-        /*
-        VKSdk.wakeUpSession(SCOPE) { (state, error) -> Void in
-            
-            if state == VKAuthorizationState.Authorized {
-                
-                print(".Authorized")
-                
-                //self.goToAlbumsViewControler()
-                
-            } else if state == VKAuthorizationState.Initialized {
-                print("Initialized")
-            } else {
-                
-                print("error = \(error)")
-            }
-        }*/
     }
     
     func goToAlbumsViewControler() {
         
         let vc = MainViewController()
-        
         self.presentViewController(vc, animated: true, completion: nil)
-        
     }
     
     //MARK: VKSdkDelegate
     
     func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
         
-        /*
-        if result.token != nil {
-            print("token = \(result.token.accessToken) state = \(result.state)")
-        } else {
-            print("error")
-        }*/
-        
-        let token = VKSdk.accessToken().accessToken
-        
-        print("token = \(token)")
+        //let token = VKSdk.accessToken().accessToken
+        //print("token = \(token)")
     }
     
     func vkSdkUserAuthorizationFailed() {
@@ -89,8 +62,4 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     func vkSdkNeedCaptchaEnter(captchaError: VKError!) {
         print(captchaError)
     }
-    
 }
-
-
-

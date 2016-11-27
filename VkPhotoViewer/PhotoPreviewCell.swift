@@ -13,35 +13,25 @@ import AlamofireImage
 
 class PhotoPreviewCell: UITableViewCell {
     
-    
     @IBOutlet weak var albumImageView: UIImageView!
     @IBOutlet weak var albumIndicator: UIActivityIndicatorView!
     @IBOutlet weak var AlbumLable: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    
     func updateWithAlbumInformation (album: AlbumInfo) {
+        
         AlbumLable.text = album.albumName
         albumIndicator.hidden = false
         albumIndicator.startAnimating()
         albumImageView.clipsToBounds = true
-        
-        
-        
-        print("album = \(album.albumID) image = \(album.albumPreview)")
-        
-        
-        
+        //print("album = \(album.albumID) image = \(album.albumPreview)")
         if album.albumPreview != nil {
             
             let urlString = (album.albumPreview)! as String
@@ -61,10 +51,9 @@ class PhotoPreviewCell: UITableViewCell {
             
             guard let image = response.result.value
                 
-            else {
-        return }
+                else {
+                    return }
             completion(image)
         }
     }
-    
 }

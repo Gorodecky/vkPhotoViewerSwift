@@ -35,7 +35,7 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         photoCollectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: identifierCell)
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
-        }
+    }
     
     // MARK: UICollectionViewDataSource
     
@@ -72,18 +72,15 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     //MARK: UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-       
-        print("indexPath.row = \(indexPath.row)")
+        
+        //print("indexPath.row = \(indexPath.row)")
         
         self.navigationBar.hidden = true
-        
         self.photoPreView.hidden = false
         self.photoCollectionView.hidden = true
-        
         self.indicatorPreView.hidden = false
         self.indicatorPreView.startAnimating()
         loadPhotoWithFullSizePreview((album?.photos![indexPath.row])!)
-        
     }
     
     func loadPhotoWithFullSizePreview (photoInfo:PhotoInfo) {
@@ -109,17 +106,5 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         self.photoPreView.hidden = true
         self.photoCollectionView.hidden = false
         self.navigationBar.hidden = false
-        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
