@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vLW-HU-rev">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gsq-fi-6dL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -26,7 +26,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teH-BH-kAn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
-                                    <segue destination="gsq-fi-6dL" kind="embed" id="Qgs-Gb-XnK"/>
+                                    <segue destination="eYO-3L-wQR" kind="embed" identifier="loginSegue" id="0Qo-gZ-7Cn"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -65,12 +65,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6N8-pW-5xD">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="6N8-pW-5xD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PreviewCellIdentifier" rowHeight="100" id="YXT-Zr-15e" customClass="PhotoPreviewCell" customModule="VkPhotoViewer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YXT-Zr-15e" id="4uV-eL-uMj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
@@ -106,7 +106,7 @@
                                             <outlet property="AlbumLable" destination="Vri-OO-nVA" id="UAd-Tc-7a6"/>
                                             <outlet property="albumImageView" destination="CI9-Ux-9YL" id="KIy-md-j9F"/>
                                             <outlet property="albumIndicator" destination="sY5-En-DAZ" id="jeT-bP-eD9"/>
-                                            <segue destination="b6x-Yw-ebI" kind="show" identifier="PhotoListIdentifier" id="CFD-sp-NE7"/>
+                                            <segue destination="b6x-Yw-ebI" kind="show" identifier="PhotoListIdentifier" id="anl-Dg-weR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -119,7 +119,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6N8-pW-5xD" firstAttribute="leading" secondItem="kJU-Xk-KG8" secondAttribute="leading" id="Fgp-XL-Q2F"/>
-                            <constraint firstItem="6N8-pW-5xD" firstAttribute="top" secondItem="KFs-UI-BoR" secondAttribute="bottom" constant="44" id="KNx-Cx-yW0"/>
+                            <constraint firstItem="6N8-pW-5xD" firstAttribute="top" secondItem="KFs-UI-BoR" secondAttribute="bottom" id="KNx-Cx-yW0"/>
                             <constraint firstAttribute="trailing" secondItem="6N8-pW-5xD" secondAttribute="trailing" id="QL5-Ji-3id"/>
                             <constraint firstItem="rQz-X2-Wxd" firstAttribute="top" secondItem="6N8-pW-5xD" secondAttribute="bottom" id="yxc-1q-qb3"/>
                         </constraints>
@@ -180,7 +180,8 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-Zc-huR">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hfw-1P-tzw">
                                     <size key="itemSize" width="103" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -200,31 +201,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1h-xG-PLp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem id="HLp-o3-xa7">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="4t9-fT-7Sy">
-                                            <connections>
-                                                <segue destination="vLW-HU-rev" kind="show" identifier="backButtonSegueIdentifier" id="OOd-LS-dgl"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="bottom" id="2ys-bQ-iUo"/>
                             <constraint firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="52X-0H-99u"/>
-                            <constraint firstItem="N1h-xG-PLp" firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="Bu6-d2-Yxb"/>
+                            <constraint firstItem="9GI-Zc-huR" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="9Jl-JI-TVm"/>
                             <constraint firstItem="SKX-7d-Nua" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="Hse-gs-GIS"/>
                             <constraint firstItem="9GI-Zc-huR" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="OPx-cA-mrl"/>
                             <constraint firstAttribute="trailing" secondItem="9GI-Zc-huR" secondAttribute="trailing" id="RuQ-DK-kh1"/>
-                            <constraint firstItem="N1h-xG-PLp" firstAttribute="leading" secondItem="9GI-Zc-huR" secondAttribute="leading" id="T3K-lG-wOJ"/>
-                            <constraint firstItem="N1h-xG-PLp" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="Tep-Gf-18r"/>
                             <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="9GI-Zc-huR" secondAttribute="bottom" id="YuN-hU-iHz"/>
-                            <constraint firstItem="9GI-Zc-huR" firstAttribute="top" secondItem="N1h-xG-PLp" secondAttribute="bottom" id="kyK-M1-cZM"/>
                             <constraint firstItem="SKX-7d-Nua" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="wJf-gQ-LYL"/>
                         </constraints>
                     </view>
@@ -232,15 +218,13 @@
                     <connections>
                         <outlet property="imagePreView" destination="etd-9H-gX3" id="EoF-e9-KNw"/>
                         <outlet property="indicatorPreView" destination="Dn0-k3-cIk" id="FPw-Nr-Cw1"/>
-                        <outlet property="navigationBar" destination="N1h-xG-PLp" id="ShJ-pA-QmY"/>
                         <outlet property="photoCollectionView" destination="9GI-Zc-huR" id="PL1-Eq-oWa"/>
                         <outlet property="photoPreView" destination="SKX-7d-Nua" id="Ydr-lc-HK3"/>
-                        <outlet property="titleNavigationItem" destination="HLp-o3-xa7" id="34i-G1-xj3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJj-VY-u3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="60"/>
+            <point key="canvasLocation" x="-65" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KT9-G9-leO">
@@ -252,12 +236,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="eYO-3L-wQR" kind="relationship" relationship="rootViewController" id="ZWT-dd-9rR"/>
+                        <segue destination="vLW-HU-rev" kind="relationship" relationship="rootViewController" id="dqY-gz-d4L"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3c-My-B6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1356" y="801"/>
+            <point key="canvasLocation" x="-1329" y="60"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="bKy-Wr-6nF">
@@ -271,21 +255,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-NL-6AW">
-                                <rect key="frame" x="136" y="269" width="94" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d6-NL-6AW">
+                                <rect key="frame" x="103" y="225" width="115" height="30"/>
+                                <state key="normal" title="Login in VK.COM"/>
                                 <connections>
                                     <action selector="button:" destination="eYO-3L-wQR" eventType="touchUpInside" id="c8n-QZ-03e"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8d6-NL-6AW" firstAttribute="centerX" secondItem="dLS-9s-Rha" secondAttribute="centerX" id="3e1-w2-R7s"/>
+                            <constraint firstItem="8d6-NL-6AW" firstAttribute="top" secondItem="2fL-mi-ORj" secondAttribute="bottom" constant="225" id="J3h-m7-tr7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NZa-ds-gHK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jev-Vx-6rM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-897" y="801"/>
+            <point key="canvasLocation" x="-936" y="821"/>
         </scene>
     </scenes>
     <resources>

@@ -9,30 +9,32 @@
 import UIKit
 import VK_ios_sdk
 
+
 class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
-    let programID = "5185911"
-    
-    let SCOPE = [VK_PER_PHOTOS]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+    var loginCompleted: (()->())!
+
     
     @IBAction func button(sender: AnyObject) {
         startVK()
     }
     
-    func startVK() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let sdkInstance = VKSdk.initializeWithAppId(programID)
+    }
+
+    // MARK: Private
+    private func startVK() {
+        
+        let sdkInstance = VKSdk.initializeWithAppId(API.VK_ID)
         sdkInstance.registerDelegate(self)
         sdkInstance.uiDelegate = self
-        VKSdk.authorize(SCOPE)
+        VKSdk.authorize(API.SCOPE)
         
         if VKSdk.accessToken() != nil {
-            goToAlbumsViewControler()
+            
+            loginCompleted()
         }
     }
     
@@ -46,8 +48,13 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
     func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
         
-        //let token = VKSdk.accessToken().accessToken
-        //print("token = \(token)")
+        if result.state == .Authorized || result.token != nil {
+            loginCompleted()
+        } else if result.state == .Error {
+            let alert = UIAlertController(title: "Error", message: result.error.localizedDescription, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func vkSdkUserAuthorizationFailed() {
@@ -55,7 +62,6 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func vkSdkShouldPresentViewController(controller: UIViewController!) {
-        
         presentViewController(controller, animated: true, completion: nil)
     }
     

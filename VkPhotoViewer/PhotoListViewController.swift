@@ -17,7 +17,7 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var indicatorPreView: UIActivityIndicatorView!
     @IBOutlet weak var imagePreView: UIImageView!
     @IBOutlet weak var photoCollectionView: UICollectionView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    //@IBOutlet weak var navigationBar: UINavigationBar!
     
     var album : AlbumInfo?
     let identifierCell = "photoCollectionCellIdentifier"
@@ -26,11 +26,11 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.hidden = false
+        //navigationBar.hidden = false
         nibMyCellLoaded = false
         photoPreView.hidden = true
         
-        titleNavigationItem.title = album!.albumName
+        //titleNavigationItem.title = album!.albumName
         
         photoCollectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: identifierCell)
         photoCollectionView.delegate = self
@@ -75,7 +75,7 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         
         //print("indexPath.row = \(indexPath.row)")
         
-        self.navigationBar.hidden = true
+        //self.navigationBar.hidden = true
         self.photoPreView.hidden = false
         self.photoCollectionView.hidden = true
         self.indicatorPreView.hidden = false
@@ -105,6 +105,6 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBAction func closeButtonPreView(sender: AnyObject) {
         self.photoPreView.hidden = true
         self.photoCollectionView.hidden = false
-        self.navigationBar.hidden = false
+        //self.navigationBar.hidden = false
     }
 }

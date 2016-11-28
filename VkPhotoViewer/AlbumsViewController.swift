@@ -50,7 +50,9 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
                         }
                         self.albumTableView.reloadData()
                     })
+
                 }
+
             }
             }) { (error) -> Void in
                 print("error = \(error)")
@@ -88,6 +90,8 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         self.performSegueWithIdentifier("PhotoListIdentifier", sender: self)
+        
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

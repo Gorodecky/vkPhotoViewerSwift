@@ -11,10 +11,6 @@ import VK_ios_sdk
 
 class MainViewController: UIViewController, VKSdkDelegate {
     
-    let programID = "5185911"
-    
-    let SCOPE = [VK_PER_PHOTOS]
-    
     @IBOutlet weak var albumView: UIView!
     @IBOutlet weak var loginView: UIView!
     
@@ -25,34 +21,48 @@ class MainViewController: UIViewController, VKSdkDelegate {
         
         self.albumView.hidden = false
         
-        let sdkInstance = VKSdk.initializeWithAppId(programID)
-        
-        sdkInstance.registerDelegate(self)
-        
-        VKSdk.wakeUpSession(SCOPE) { (state, error) -> Void in
-            
-            if state == VKAuthorizationState.Authorized {
-                
-                self.albumView.hidden = false
-                self.loginView.hidden = true
-                self.albumsView!.getAlbums()
-                
-            } else if state == VKAuthorizationState.Initialized {
-                self.albumView.hidden = true
-                self.loginView.hidden = false
-                print("Initialized")
-            } else {
-                print("error = \(error)")
-            }
+        if VKSdk.initialized() {
+            VKSdk.instance().registerDelegate(self)
         }
+        
+        checkSessionState()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "albums" {
             albumsView = segue.destinationViewController as? AlbumsViewController
+        } else if segue.identifier == "loginSegue" {
+            let loginVc = segue.destinationViewController as? LoginViewController
+            loginVc?.loginCompleted = {
+                self.checkSessionState()
+            }
+        }
+        
+    }
+    
+    private func checkSessionState() {
+        
+        VKSdk.wakeUpSession(API.SCOPE) { (state, error) -> Void in
+            if state == VKAuthorizationState.Authorized {
+                
+                self.title = "Album list"
+                self.albumView.hidden = false
+                self.loginView.hidden = true
+                self.albumsView!.getAlbums()
+                
+            } else if state == VKAuthorizationState.Initialized {
+                
+                self.title = "Login with VK"
+                self.albumView.hidden = true
+                self.loginView.hidden = false
+                
+            } else {
+                print("error = \(error)")
+            }
         }
     }
+    
     
     //MARK: VKSdkDelegate
     
