@@ -23,7 +23,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func udateWithPhotoInfo(photoInfo: PhotoInfo) {
-        print("photoInfo.photoPreviewUrl = \(photoInfo.photoPreviewUrl)")
+        //print("photoInfo.photoPreviewUrl = \(photoInfo.photoPreviewUrl)")
         
         //indicator.startAnimating()
         let urlString = (photoInfo.photoPreviewUrl) as String

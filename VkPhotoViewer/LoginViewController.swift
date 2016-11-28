@@ -9,11 +9,9 @@
 import UIKit
 import VK_ios_sdk
 
-
 class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
     var loginCompleted: (()->())!
-
     
     @IBAction func button(sender: AnyObject) {
         startVK()
@@ -21,9 +19,8 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
+    
     // MARK: Private
     private func startVK() {
         
@@ -45,7 +42,6 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     //MARK: VKSdkDelegate
-    
     func vkSdkAccessAuthorizationFinishedWithResult(result: VKAuthorizationResult!) {
         
         if result.state == .Authorized || result.token != nil {

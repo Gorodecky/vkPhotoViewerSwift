@@ -15,13 +15,10 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
     var album : AlbumInfo?
-    
     let identifierCell = "photoCollectionCellIdentifier"
-    
     var nibMyCellLoaded: Bool?
     
     // MARK: ViewDidLoad
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +29,6 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     // MARK: UICollectionViewDataSource
-    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -63,20 +59,22 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
+    
+    //MARK: UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("preViewSegueIdentifier", sender: collectionView.cellForItemAtIndexPath(indexPath))
     }
     
+    //MARK: Sugue
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(sender)
+        //print(sender)
         if segue.identifier == "preViewSegueIdentifier" {
             let preViewVC = segue.destinationViewController as! PreviewImageViewController
             let cell = sender as! PhotoCollectionViewCell
             let indexPath = self.photoCollectionView.indexPathForCell(cell)
             preViewVC.album = album?.photos
-            preViewVC.photo = album?.photos![(indexPath?.row)!]
-            //let cell = sender as!
-            
+            preViewVC.photoIndex = indexPath?.row
         }
     }
     

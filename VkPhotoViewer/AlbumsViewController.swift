@@ -14,9 +14,7 @@ import SwiftyJSON
 class AlbumsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let kPhotoPreviewCellIdentifier = "PreviewCellIdentifier"
-    
     @IBOutlet weak var albumTableView: UITableView!
-    
     var albumsArray : [AlbumInfo] = []
     
     override func viewDidLoad() {
@@ -50,9 +48,7 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
                         }
                         self.albumTableView.reloadData()
                     })
-
                 }
-
             }
             }) { (error) -> Void in
                 print("error = \(error)")
@@ -77,7 +73,7 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
                 arrayPhoto.append(item)
                 
             }
-            print(arrayPhoto.count)
+            //print(arrayPhoto.count)
             complection(arrayPhoto)
             
             }, errorBlock: { (error) -> Void in
