@@ -12,26 +12,20 @@ import AlamofireImage
 
 class PhotoListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var titleNavigationItem: UINavigationItem!
-    @IBOutlet weak var photoPreView: UIView!
-    @IBOutlet weak var indicatorPreView: UIActivityIndicatorView!
-    @IBOutlet weak var imagePreView: UIImageView!
     @IBOutlet weak var photoCollectionView: UICollectionView!
-    //@IBOutlet weak var navigationBar: UINavigationBar!
     
     var album : AlbumInfo?
+    
     let identifierCell = "photoCollectionCellIdentifier"
+    
     var nibMyCellLoaded: Bool?
     
     // MARK: ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationBar.hidden = false
+        
         nibMyCellLoaded = false
-        photoPreView.hidden = true
-        
-        //titleNavigationItem.title = album!.albumName
-        
         photoCollectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: identifierCell)
         photoCollectionView.delegate = self
         photoCollectionView.dataSource = self
@@ -69,27 +63,20 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
-    //MARK: UICollectionViewDelegate
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        //print("indexPath.row = \(indexPath.row)")
-        
-        //self.navigationBar.hidden = true
-        self.photoPreView.hidden = false
-        self.photoCollectionView.hidden = true
-        self.indicatorPreView.hidden = false
-        self.indicatorPreView.startAnimating()
-        loadPhotoWithFullSizePreview((album?.photos![indexPath.row])!)
+        self.performSegueWithIdentifier("preViewSegueIdentifier", sender: self)
     }
     
-    func loadPhotoWithFullSizePreview (photoInfo:PhotoInfo) {
-        
-        let urlString = photoInfo.photoUrl
-        
-        getNetworkImage(urlString) { (image) -> Void in
-            self.imagePreView.image = image
-            self.indicatorPreView.stopAnimating()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(sender)
+        if segue.identifier == "preViewSegueIdentifier" {
+            let preViewVC = segue.destinationViewController as! PreviewImageViewController
+            let cell = sender as! PhotoCollectionViewCell
+            let indexPath = self.photoCollectionView.indexPathForCell(cell)
+            preViewVC.album = album?.photos
+            preViewVC.photo = album?.photos![(indexPath?.row)!]
+            //let cell = sender as!
+            
         }
     }
     
@@ -99,12 +86,5 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
             
             guard let image = response.result.value else {return}; completion(image)
         }
-    }
-    
-    // MARK: CloseButton
-    @IBAction func closeButtonPreView(sender: AnyObject) {
-        self.photoPreView.hidden = true
-        self.photoCollectionView.hidden = false
-        //self.navigationBar.hidden = false
     }
 }

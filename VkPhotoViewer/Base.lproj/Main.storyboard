@@ -146,39 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKX-7d-Nua">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Dn0-k3-cIk">
-                                        <rect key="frame" x="150" y="274" width="20" height="20"/>
-                                    </activityIndicatorView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etd-9H-gX3">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-BN-hdu">
-                                        <rect key="frame" x="280" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="2JZ-pm-ghb"/>
-                                            <constraint firstAttribute="height" constant="40" id="trU-1g-tuN"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Close button.svg_0.png"/>
-                                        <connections>
-                                            <action selector="closeButtonPreView:" destination="b6x-Yw-ebI" eventType="touchUpInside" id="6ox-bI-C6W"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="etd-9H-gX3" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="4Ra-zN-u6K"/>
-                                    <constraint firstAttribute="trailing" secondItem="etd-9H-gX3" secondAttribute="trailing" id="8yt-al-og6"/>
-                                    <constraint firstAttribute="trailing" secondItem="4mF-BN-hdu" secondAttribute="trailing" id="BHV-2f-veX"/>
-                                    <constraint firstItem="4mF-BN-hdu" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="top" id="GyQ-e9-1r8"/>
-                                    <constraint firstItem="Dn0-k3-cIk" firstAttribute="centerX" secondItem="SKX-7d-Nua" secondAttribute="centerX" id="N1L-mW-TbU"/>
-                                    <constraint firstAttribute="bottom" secondItem="etd-9H-gX3" secondAttribute="bottom" id="Zdt-wA-3gS"/>
-                                    <constraint firstItem="etd-9H-gX3" firstAttribute="leading" secondItem="SKX-7d-Nua" secondAttribute="leading" id="egq-Qw-LoG"/>
-                                    <constraint firstItem="Dn0-k3-cIk" firstAttribute="centerY" secondItem="SKX-7d-Nua" secondAttribute="centerY" id="gt3-RF-VaV"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-Zc-huR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -198,33 +165,67 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <segue destination="r4m-Zj-gTM" kind="show" identifier="preViewSegueIdentifier" id="SAv-xo-gjq"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="SKX-7d-Nua" secondAttribute="bottom" id="2ys-bQ-iUo"/>
-                            <constraint firstAttribute="trailing" secondItem="SKX-7d-Nua" secondAttribute="trailing" id="52X-0H-99u"/>
                             <constraint firstItem="9GI-Zc-huR" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="9Jl-JI-TVm"/>
-                            <constraint firstItem="SKX-7d-Nua" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="Hse-gs-GIS"/>
                             <constraint firstItem="9GI-Zc-huR" firstAttribute="leading" secondItem="qSU-f5-IJx" secondAttribute="leading" id="OPx-cA-mrl"/>
                             <constraint firstAttribute="trailing" secondItem="9GI-Zc-huR" secondAttribute="trailing" id="RuQ-DK-kh1"/>
                             <constraint firstItem="AAd-CU-wb6" firstAttribute="top" secondItem="9GI-Zc-huR" secondAttribute="bottom" id="YuN-hU-iHz"/>
-                            <constraint firstItem="SKX-7d-Nua" firstAttribute="top" secondItem="pEX-Xb-t0a" secondAttribute="bottom" id="wJf-gQ-LYL"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="imagePreView" destination="etd-9H-gX3" id="EoF-e9-KNw"/>
-                        <outlet property="indicatorPreView" destination="Dn0-k3-cIk" id="FPw-Nr-Cw1"/>
                         <outlet property="photoCollectionView" destination="9GI-Zc-huR" id="PL1-Eq-oWa"/>
-                        <outlet property="photoPreView" destination="SKX-7d-Nua" id="Ydr-lc-HK3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJj-VY-u3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="60"/>
+        </scene>
+        <!--Preview Image View Controller-->
+        <scene sceneID="igo-8Y-PMw">
+            <objects>
+                <viewController id="r4m-Zj-gTM" customClass="PreviewImageViewController" customModule="VkPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="knz-AN-VTu"/>
+                        <viewControllerLayoutGuide type="bottom" id="0HJ-4c-kXk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ehh-7Z-iFE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Brh-s8-qvM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XXK-RL-wYj">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XXK-RL-wYj" firstAttribute="centerY" secondItem="Brh-s8-qvM" secondAttribute="centerY" id="51f-ly-gqJ"/>
+                            <constraint firstItem="0HJ-4c-kXk" firstAttribute="top" secondItem="Brh-s8-qvM" secondAttribute="bottom" id="Bu0-xz-E9l"/>
+                            <constraint firstAttribute="trailing" secondItem="Brh-s8-qvM" secondAttribute="trailing" id="GBw-8U-Vnk"/>
+                            <constraint firstItem="XXK-RL-wYj" firstAttribute="centerX" secondItem="Brh-s8-qvM" secondAttribute="centerX" id="HWS-jB-UGM"/>
+                            <constraint firstItem="Brh-s8-qvM" firstAttribute="top" secondItem="knz-AN-VTu" secondAttribute="bottom" id="oUl-As-keu"/>
+                            <constraint firstItem="Brh-s8-qvM" firstAttribute="leading" secondItem="ehh-7Z-iFE" secondAttribute="leading" id="rRk-tG-zZY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imagePreView" destination="Brh-s8-qvM" id="Wd6-Uw-Wzs"/>
+                        <outlet property="indicatorPreview" destination="XXK-RL-wYj" id="tZ0-ea-sud"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7FC-P4-c8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KT9-G9-leO">
@@ -276,7 +277,4 @@
             <point key="canvasLocation" x="-936" y="821"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Close button.svg_0.png" width="220" height="220"/>
-    </resources>
 </document>

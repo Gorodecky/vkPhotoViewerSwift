@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C2284509FFECA5A193BF24CD /* Pods_VkPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504C52A5C47B1B841952E46B /* Pods_VkPhotoViewer.framework */; };
+		FE2D12AE1DEC53DC0043A67B /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2D12AD1DEC53DC0043A67B /* PreviewImageViewController.swift */; };
 		FE7A01041DCD029400F35313 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7A01031DCD029400F35313 /* LoginViewController.swift */; };
 		FE83B0831DE785DA00E04786 /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83B0821DE785DA00E04786 /* PhotoListViewController.swift */; };
 		FEADB1201DEBA28F00E6A429 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEADB11F1DEBA28F00E6A429 /* Constants.swift */; };
@@ -29,6 +30,7 @@
 		504C52A5C47B1B841952E46B /* Pods_VkPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE9ACA52F49E5095AC2DD3 /* Pods-VkPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkPhotoViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
 		EC1FA1C50F0AB5E3E9B83396 /* Pods-VkPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VkPhotoViewer/Pods-VkPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		FE2D12AD1DEC53DC0043A67B /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		FE7A01031DCD029400F35313 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE83B0821DE785DA00E04786 /* PhotoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		FEADB11F1DEBA28F00E6A429 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -81,10 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				FEF0E35F1DE458880005557D /* UI */,
-				FEC53D941DCE2EB0004761E2 /* AlbumsViewController.swift */,
 				FE83B0821DE785DA00E04786 /* PhotoListViewController.swift */,
+				FE2D12AD1DEC53DC0043A67B /* PreviewImageViewController.swift */,
 				FEC267CD1DD4C610008069C6 /* MainViewController.swift */,
 				FE7A01031DCD029400F35313 /* LoginViewController.swift */,
+				FEC53D941DCE2EB0004761E2 /* AlbumsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				FEC267CE1DD4C610008069C6 /* MainViewController.swift in Sources */,
 				FEADB1201DEBA28F00E6A429 /* Constants.swift in Sources */,
 				FE83B0831DE785DA00E04786 /* PhotoListViewController.swift in Sources */,
+				FE2D12AE1DEC53DC0043A67B /* PreviewImageViewController.swift in Sources */,
 				FEF0E3641DE464E40005557D /* PhotoPreviewCell.swift in Sources */,
 				FEC53D8D1DCE2A28004761E2 /* AlbumInfo.swift in Sources */,
 				FEC53D8F1DCE2A51004761E2 /* PhotoInfo.swift in Sources */,

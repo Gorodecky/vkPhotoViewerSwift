@@ -85,15 +85,6 @@ class AlbumsViewController: UIViewController, UITableViewDataSource, UITableView
         })
     }
     
-    // MARK: - UITableViewDelegate
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        self.performSegueWithIdentifier("PhotoListIdentifier", sender: self)
-        
-        
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "PhotoListIdentifier" {
