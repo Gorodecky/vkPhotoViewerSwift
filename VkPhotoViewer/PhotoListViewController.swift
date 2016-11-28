@@ -64,7 +64,7 @@ class PhotoListViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("preViewSegueIdentifier", sender: self)
+        self.performSegueWithIdentifier("preViewSegueIdentifier", sender: collectionView.cellForItemAtIndexPath(indexPath))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

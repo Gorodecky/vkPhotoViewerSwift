@@ -34,8 +34,7 @@ class PreviewImageViewController: UIViewController {
     func updateWithPhotoInfo(photoInfo: PhotoInfo) {
         print("photoInfo.photoPreviewUrl = \(photoInfo.photoPreviewUrl)")
         
-        //indicator.startAnimating()
-        let urlString = (photoInfo.photoPreviewUrl) as String
+        let urlString = (photoInfo.photoUrl) as String
         
         getNetworkImage(urlString, completion: { (image) -> Void in
             
@@ -48,9 +47,7 @@ class PreviewImageViewController: UIViewController {
     func getNetworkImage(urlString: String, completion: (UIImage? -> Void)) -> (Request) {
         
         return Alamofire.request(.GET, urlString).responseImage { (response) -> Void in
-            
             guard let image = response.result.value
-                
                 else { return }
             completion(image)
         }
